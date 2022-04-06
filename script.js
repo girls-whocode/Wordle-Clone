@@ -15289,6 +15289,7 @@ const dictionary = [
   "rural",
   "shave",
 ]
+
 const WORD_LENGTH = 5
 const FLIP_ANIMATION_DURATION = 500
 const DANCE_ANIMATION_DURATION = 500
@@ -15357,8 +15358,9 @@ function pressKey(key) {
 
 function deleteKey() {
   const activeTiles = getActiveTiles()
+  if (activeTiles.length <= 0) return
   const lastTile = activeTiles[activeTiles.length - 1]
-  if (lastTile == null) return
+  // if (lastTile == null) return
   lastTile.textContent = ""
   delete lastTile.dataset.state
   delete lastTile.dataset.letter
